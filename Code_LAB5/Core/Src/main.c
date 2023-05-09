@@ -66,6 +66,8 @@ uint8_t Err_do = 0;
 
 //ASCII Code 0(000) is Non-Function(Reset) code
 
+uint8_t time_out = 100; // for time out
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -137,19 +139,19 @@ int main(void)
 
 					clear_screen();
 
-					HAL_UART_Transmit(&huart2, TxBuffer, strlen((char*)TxBuffer), 10);
+					HAL_UART_Transmit(&huart2, TxBuffer, strlen((char*)TxBuffer), time_out);
 					sprintf((char*)TxBuffer,"-------- FRA223 LAB5 UART 6444 -------- \r\n");
-					HAL_UART_Transmit(&huart2, TxBuffer, strlen((char*)TxBuffer), 10);
+					HAL_UART_Transmit(&huart2, TxBuffer, strlen((char*)TxBuffer), time_out);
 					sprintf((char*)TxBuffer,"\r\n");
-					HAL_UART_Transmit(&huart2, TxBuffer, strlen((char*)TxBuffer), 10);
+					HAL_UART_Transmit(&huart2, TxBuffer, strlen((char*)TxBuffer), time_out);
 					sprintf((char*)TxBuffer,"         [0] LED Control\r\n");
-					HAL_UART_Transmit(&huart2, TxBuffer, strlen((char*)TxBuffer), 10);
+					HAL_UART_Transmit(&huart2, TxBuffer, strlen((char*)TxBuffer), time_out);
 					sprintf((char*)TxBuffer,"         [1] Button Status\r\n");
-					HAL_UART_Transmit(&huart2, TxBuffer, strlen((char*)TxBuffer), 10);
+					HAL_UART_Transmit(&huart2, TxBuffer, strlen((char*)TxBuffer), time_out);
 					sprintf((char*)TxBuffer,"\r\n");
-					HAL_UART_Transmit(&huart2, TxBuffer, strlen((char*)TxBuffer), 10);
+					HAL_UART_Transmit(&huart2, TxBuffer, strlen((char*)TxBuffer), time_out);
 					sprintf((char*)TxBuffer,"Type the Following button in [_] to use the Function \r\n");
-					HAL_UART_Transmit(&huart2, TxBuffer, strlen((char*)TxBuffer), 10);
+					HAL_UART_Transmit(&huart2, TxBuffer, strlen((char*)TxBuffer), time_out);
 
 				}
 				//----------------------------------------------#Action#----------------------------------------------
@@ -176,23 +178,23 @@ int main(void)
 
 					clear_screen();
 					sprintf((char*)TxBuffer,"-------- LED Control Blink Function -------- \r\n");
-					HAL_UART_Transmit(&huart2, TxBuffer, strlen((char*)TxBuffer), 10);
+					HAL_UART_Transmit(&huart2, TxBuffer, strlen((char*)TxBuffer), time_out);
 					sprintf((char*)TxBuffer,"---------- #LED now Blink %d Hz ------------- \r\n",Blink_Hz);
-					HAL_UART_Transmit(&huart2, TxBuffer, strlen((char*)TxBuffer), 10);
+					HAL_UART_Transmit(&huart2, TxBuffer, strlen((char*)TxBuffer), time_out);
 					sprintf((char*)TxBuffer,"\r\n");
-					HAL_UART_Transmit(&huart2, TxBuffer, strlen((char*)TxBuffer), 10);
+					HAL_UART_Transmit(&huart2, TxBuffer, strlen((char*)TxBuffer), time_out);
 					sprintf((char*)TxBuffer,"         [a] Speed Up +1 Hz\r\n");
-					HAL_UART_Transmit(&huart2, TxBuffer, strlen((char*)TxBuffer), 10);
+					HAL_UART_Transmit(&huart2, TxBuffer, strlen((char*)TxBuffer), time_out);
 					sprintf((char*)TxBuffer,"         [s] Speed Down -1 Hz\r\n");
-					HAL_UART_Transmit(&huart2, TxBuffer, strlen((char*)TxBuffer), 10);
+					HAL_UART_Transmit(&huart2, TxBuffer, strlen((char*)TxBuffer), time_out);
 					sprintf((char*)TxBuffer,"         [d] On/Off\r\n");
-					HAL_UART_Transmit(&huart2, TxBuffer, strlen((char*)TxBuffer), 10);
+					HAL_UART_Transmit(&huart2, TxBuffer, strlen((char*)TxBuffer), time_out);
 					sprintf((char*)TxBuffer,"         [x] Home Page\r\n");
-					HAL_UART_Transmit(&huart2, TxBuffer, strlen((char*)TxBuffer), 10);
+					HAL_UART_Transmit(&huart2, TxBuffer, strlen((char*)TxBuffer), time_out);
 					sprintf((char*)TxBuffer,"\r\n");
-					HAL_UART_Transmit(&huart2, TxBuffer, strlen((char*)TxBuffer), 10);
+					HAL_UART_Transmit(&huart2, TxBuffer, strlen((char*)TxBuffer), time_out);
 					sprintf((char*)TxBuffer,"Type the Following button in [_] to use the Function \r\n");
-					HAL_UART_Transmit(&huart2, TxBuffer, strlen((char*)TxBuffer), 10);
+					HAL_UART_Transmit(&huart2, TxBuffer, strlen((char*)TxBuffer), time_out);
 
 				}
 				//----------------------------------------------#Action#----------------------------------------------
@@ -235,17 +237,17 @@ int main(void)
 
 					clear_screen();
 					sprintf((char*)TxBuffer,"-------- Button Status Check Function -------- \r\n");
-					HAL_UART_Transmit(&huart2, TxBuffer, strlen((char*)TxBuffer), 10);
+					HAL_UART_Transmit(&huart2, TxBuffer, strlen((char*)TxBuffer), time_out);
 					sprintf((char*)TxBuffer,"---------- #My Button is now %s ------------- \r\n",My_Button);
-					HAL_UART_Transmit(&huart2, TxBuffer, strlen((char*)TxBuffer), 10);
+					HAL_UART_Transmit(&huart2, TxBuffer, strlen((char*)TxBuffer), time_out);
 					sprintf((char*)TxBuffer,"\r\n");
-					HAL_UART_Transmit(&huart2, TxBuffer, strlen((char*)TxBuffer), 10);
+					HAL_UART_Transmit(&huart2, TxBuffer, strlen((char*)TxBuffer), time_out);
 					sprintf((char*)TxBuffer,"         [x] Home Page\r\n");
-					HAL_UART_Transmit(&huart2, TxBuffer, strlen((char*)TxBuffer), 10);
+					HAL_UART_Transmit(&huart2, TxBuffer, strlen((char*)TxBuffer), time_out);
 					sprintf((char*)TxBuffer,"\r\n");
-					HAL_UART_Transmit(&huart2, TxBuffer, strlen((char*)TxBuffer), 10);
+					HAL_UART_Transmit(&huart2, TxBuffer, strlen((char*)TxBuffer), time_out);
 					sprintf((char*)TxBuffer,"Type the Following button in [_] to use the Function \r\n");
-					HAL_UART_Transmit(&huart2, TxBuffer, strlen((char*)TxBuffer), 10);
+					HAL_UART_Transmit(&huart2, TxBuffer, strlen((char*)TxBuffer), time_out);
 				}
 				//----------------------------------------------#Action#----------------------------------------------
 				if(RxBuffer[0] == 120){ //(x) go to led home page
@@ -279,11 +281,11 @@ int main(void)
 
 					clear_screen();
 					sprintf((char*)TxBuffer,"************ Wrong Input! ************ \r\n");
-					HAL_UART_Transmit(&huart2, TxBuffer, strlen((char*)TxBuffer), 10);
+					HAL_UART_Transmit(&huart2, TxBuffer, strlen((char*)TxBuffer), time_out);
 					sprintf((char*)TxBuffer,"\r\n");
-					HAL_UART_Transmit(&huart2, TxBuffer, strlen((char*)TxBuffer), 10);
+					HAL_UART_Transmit(&huart2, TxBuffer, strlen((char*)TxBuffer), time_out);
 					sprintf((char*)TxBuffer,"       Type [x] to Home Page\r\n");
-					HAL_UART_Transmit(&huart2, TxBuffer, strlen((char*)TxBuffer), 10);
+					HAL_UART_Transmit(&huart2, TxBuffer, strlen((char*)TxBuffer), time_out);
 				}
 				//----------------------------------------------#Action#----------------------------------------------
 				if(RxBuffer[0] == 120){ //(x) go to led home page
@@ -368,7 +370,7 @@ static void MX_USART2_UART_Init(void)
 
   /* USER CODE END USART2_Init 1 */
   huart2.Instance = USART2;
-  huart2.Init.BaudRate = 115200;
+  huart2.Init.BaudRate = 9600;
   huart2.Init.WordLength = UART_WORDLENGTH_8B;
   huart2.Init.StopBits = UART_STOPBITS_1;
   huart2.Init.Parity = UART_PARITY_NONE;
